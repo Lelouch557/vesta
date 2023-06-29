@@ -1,0 +1,122 @@
+#footer{
+    position:absolute;
+    width: 100%;
+    background-color: #120a16;
+    color: #9f9f9f;
+    margin-top:1650px;
+    height: initial;
+    min-height:400px;
+    overflow: hidden;
+}
+
+#footerWrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 30px;
+    justify-content: space-evenly;
+}
+
+tr {
+    height: 21px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#tijden {
+    width: fit-content;
+}
+
+td {
+    margin-right: 23px;
+}
+
+#footerTitle{
+    font-size: 26px;
+    margin: 0;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+#ContactInformatie{
+    width:fit-content;
+    margin: 0;
+}
+
+.footerSection p {
+    margin: 3px;
+}
+
+.footerSection {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footerIcon{
+    width:15px;
+    height:15px;
+}
+
+.t2 {
+    margin-left: 20px;
+}
+
+#times{
+    margin-top: -20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#phoneT1{
+    display: flex;
+    flex-direction: column;
+}
+
+#mapsLink:hover{
+    cursor: pointer;
+}
+
+#mail:hover{
+    cursor: pointer;
+}
+
+#socials a{
+    font-size: x-large;
+    font-weight: bold;
+    border: 2px solid;
+    height: 14px;
+    padding: 10px;
+    border-radius: 1e+21px;
+    width: 14px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-decoration: none;
+    color: #9f9f9f;
+}
+
+@media screen and (max-width: 1000px) {
+    #footerWrapper{
+        width:100%;
+        margin-left: 0%;
+        font-size: x-large;
+    }
+    #footer{
+        bottom: 0px;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height:-px;
+    }
+}

@@ -1,0 +1,77 @@
+
+{% block stylesheets %}
+
+<link href="{{ asset('CSS/Footer.css') }}" rel="stylesheet" />
+
+{% endblock %}
+<div id="footer">
+    <div id="footerWrapper">
+        <div id='ContactInformatie'>
+            <p id='footerTitle'>Contact info</p>
+            <div class='footerSection' id="mapsLink" onclick="window.location='https://goo.gl/maps/iG33Uh6cPRqPksjE8'">
+                <div class='t1'>
+                    <span class="material-symbols-outlined">
+                        pin_drop
+                    </span>
+                </div>
+                <div class='t2'>
+                    <p>Salon Vesta</p>
+                    <p>Museumstraat 1</p>
+                    <p>1071 xx Amsterdam</p>
+                </div>
+            </div>
+            <div class='footerSection' id='mail'  onclick="window.location='mailto:salonvesta@vesta.nl'" >
+                <div class='t1'>
+                    <span class="material-symbols-outlined">
+                        mail
+                    </span>
+                </div>
+                <div class='t2'>
+                    <p>salonvesta@vesta.nl</p>
+                </div>
+            </div>
+            <div class='footerSection' id='phone'>
+                <div class='t1' id='phoneT1'>
+                    <span class="material-symbols-outlined">
+                        call
+                    </span>
+                    <span class="material-symbols-outlined">
+                        smartphone
+                    </span>
+                </div>
+                <div class='t2'>
+                    <p onclick="window.open('tel:{{landline}}');">{{landline}}</p>
+                    <p onclick="window.open('tel:{{mobile}}');">{{mobile}}</p>
+                </div>
+            </div>
+        </div>
+        <div id="tijden">
+            <p id='footerTitle'>Openingstijden</p>
+            <p>Open op afspraak</p>
+            <div id="times">
+                <div class='t1'>
+                    <span class="material-symbols-outlined">
+                        calendar_month
+                    </span>
+                </div>
+                <div class='t2'>
+                    <table>
+                        {% for key, day in openingsTijden %}
+                            {% for timeset in day %}
+                                <tr><td><p>{{ key}}</p></td><td><p>{{ timeset }}</p></td></tr>
+                            {% endfor %}
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="socials">
+            <p id='footerTitle'>Social Media</p>
+            <p>
+                <a href="https://www.facebook.com/salonvesta/">
+                    f
+                </a>
+            </p>
+        </div>
+    </div>
+</div>

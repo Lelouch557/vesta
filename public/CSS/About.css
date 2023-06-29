@@ -1,0 +1,69 @@
+#wrapper{
+    width: 50%;
+    margin-left: 25%;
+    background-color: white;
+}
+
+#content{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding-top:100px;
+    align-items: center;
+}
+
+#break{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#line{
+    width: 143px;
+    height: 0px;
+    border: 3px solid black;
+    border-radius: 4px;
+}
+
+#spaIcon{
+    margin: 8px;
+    font-size: 4vh;
+}
+
+#title{
+    font-size: xxx-large;
+    font-weight: 500;
+}
+
+#descriptionSalon{
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#workers{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #57346c;
+    color: white;
+    align-items: center;
+}
+
+.workerPic{
+    width: 200px;
+    height: 200px;
+    background: url(/Photos/worker1.jpg) no-repeat center center;
+    background-size: cover;
+    border-radius: 100%;
+    border: 1px solid black;
+}
+
+.workerDescription{
+    width: 625px;
+}

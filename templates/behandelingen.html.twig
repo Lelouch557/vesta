@@ -1,0 +1,90 @@
+{{ 
+    include('Components/base.html.twig', {
+        'links': {
+            'HOME' : ['/', ''],
+            'OVER ONS' : ['/OverOns', 'activeMenuItem'],
+            'BEHANDELINGEN' : ['/', ''],
+            'CADEAUBON' : ['/', ''],
+            'MEDIA' : ['/', ''],
+            'CONTACT' : ['/', ''],
+
+        }
+    }) 
+}}
+{% block stylesheets %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link href="{{ asset('CSS/About.css') }}" rel="stylesheet" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,500,0,0" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+{% endblock %}
+
+{% block body %}
+
+{% endblock %}
+<div id='wrapper'>
+    <div id='content'>
+        <p id='title'>Behandelingen</p>
+        <div id='Behandelingen'>
+            {% for key, val in Behandelingen %}
+                <div id='categories'></div>
+            {% endfor %}
+            {% for key, val in Behandelingen %}
+                <div id='behandelingen'>
+                    {% for key2, val2 in val %}
+                        <div id='behandeling'>
+                            <p>{{val2}}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{{ 
+    include('Components/Footer.html.twig', {
+    'openingsTijden' : {
+        'Maandag': ['9:00 - 17:00'],
+        'Dinsdag': ['9:00 - 17:00'],
+        'Woensdag': ['9:00 - 17:00'],
+        '   ↳': ['19:00 - 21:00'],
+        'Donderdag': ['9:00 - 17:00'],
+        'vrijdag': ['9:00 - 17:00'],
+        'Zaterdag':['Niet open'],
+        'Zondag':['Niet open']
+    }})
+}}
+
+<style>
+    body{
+        background:url('{{asset('Photos/spa14.jpg')}}') no-repeat center center fixed; 
+        background-size: cover;
+    }
+    #footer{
+        margin-top:0px;
+    }
+    
+    @media screen and (max-width: 1000px) {
+        #footerWrapper{
+            width:100%;
+            margin-left: 0%;
+            font-size: x-large;
+        }
+        #footer{
+            bottom: initial;
+            top:initial;
+            left: initial;
+            right: initial;
+            margin-top:initial;
+        }
+        #wrapper{
+            border-top: 5px solid black;
+        }
+        #wrapper, #content{
+            width:100%;
+            margin-left:0px;
+            font-size: xx-large;
+        }
+    }
+</style>

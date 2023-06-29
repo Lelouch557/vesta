@@ -1,0 +1,34 @@
+
+<div id="slidesDiv" >
+    {% for index in 0..(photos|length -1) %}
+        <img id='slide{{ index }}' class='slides' src='{{ asset( photos[index]) }}'/>
+    {% endfor %}
+    <div id='progressBar'></div>
+</div>
+
+
+<script>
+    var prev = {{ photos|length }};
+    var curr = 0;
+
+    slides = function(){
+        $('#progressBar').css('transition','width linear 0s');
+        $('#progressBar').css('width','0px');
+        $('#slide' + prev).css('opacity','0');
+        $('#slide' + curr).css('opacity','1');
+        prev = curr;
+        curr = curr + 1;
+        
+        if(curr == {{ photos|length }}){
+            curr = 0;
+        }
+
+        setTimeout(() => {
+            $('#progressBar').css('transition','width linear 9s');
+            $('#progressBar').css('width','60%');
+        }, 800);
+    }
+    slides();
+
+    setInterval(slides, 10000);
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+        {% block title %}Home{% endblock %}</title>
+
+        <link href="{{ asset('CSS/Header.css') }}" rel="stylesheet" />
+        <link href="{{ asset('CSS/Body.css') }}" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+
+        {% block stylesheets %}{% endblock %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+        <div id="header">
+            <div id='headerMenuPhone' onclick='$("#headerMenu").toggle()'><p>MENU</p> <span class="material-symbols-outlined">menu</span></div>
+            <div id="headerMenu">
+                {% for key, val in links %}
+                    <a id="{{key|lower}}" class="menuItem {{ val[1] }}" href="{{val[0]}}">
+                        <p>{{key}}</p>
+                        {# <div>Home</div> #}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% block body %}{% endblock %}
+        <script>
+            fucntion toggleMenu(){
+                if($('#headerMenu').attr('display') != 'flex'){
+                    $('#headerMenu').css('display', 'flex');
+                }else{
+                    $('#headerMenu').css('display:', 'none');
+                }
+            }
+        </script>
+    </body>
+</html>
