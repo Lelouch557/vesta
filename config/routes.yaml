@@ -13,7 +13,11 @@ OverOns:
 
 Behandelingen:
     path: /behandelingen
-    controller: App\View\behandelingen
+    controller: App\View\Behandelingen
+
+Cadeaubon:
+    path: /cadeaubon
+    controller: App\View\Cadeaubon
 
 oauth2:
     resource: '@LeagueOAuth2ServerBundle/Resources/config/routes.php'

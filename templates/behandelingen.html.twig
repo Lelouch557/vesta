@@ -1,10 +1,11 @@
+
 {{ 
     include('Components/base.html.twig', {
         'links': {
             'HOME' : ['/', ''],
-            'OVER ONS' : ['/OverOns', 'activeMenuItem'],
-            'BEHANDELINGEN' : ['/', ''],
-            'CADEAUBON' : ['/', ''],
+            'OVER ONS' : ['/OverOns', ''],
+            'BEHANDELINGEN' : ['/behandelingen', 'activeMenuItem'],
+            'CADEAUBON' : ['/cadeaubon', ''],
             'MEDIA' : ['/', ''],
             'CONTACT' : ['/', ''],
 
@@ -13,9 +14,39 @@
 }}
 {% block stylesheets %}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link href="{{ asset('CSS/About.css') }}" rel="stylesheet" />
+<link href="{{ asset('CSS/Behandelingen.css') }}" rel="stylesheet" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,500,0,0" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+{% endblock %}
+
+{% block javascript %}
+<script>
+    function toggle(treatment){
+        disableTreatments();
+        enableTreatments(treatment);
+
+        disableCategories();
+        enableCategory(treatment);
+    }
+
+    function disableTreatments(){
+        $('.treatment').css('display', 'none');
+    }
+
+    function enableTreatments(treatment){
+        var name = '.' + treatment;
+        $(name).css('display', 'flex');
+    }
+
+    function disableCategories(){
+        $('.category').attr('class', 'category');
+    }
+
+    function enableCategory(treatment){
+        var name = '#' + treatment + 'Category';
+        $(name).attr('class', 'category activeCategory');
+    }
+</script>
 {% endblock %}
 
 {% block body %}
@@ -23,20 +54,39 @@
 {% endblock %}
 <div id='wrapper'>
     <div id='content'>
-        <p id='title'>Behandelingen</p>
         <div id='Behandelingen'>
-            {% for key, val in Behandelingen %}
-                <div id='categories'></div>
-            {% endfor %}
-            {% for key, val in Behandelingen %}
-                <div id='behandelingen'>
-                    {% for key2, val2 in val %}
-                        <div id='behandeling'>
-                            <p>{{val2}}</p>
+            <div id='categories'>
+                <p id='title'>Categories</p>
+                {% for key, val in Behandelingen %}
+                    {% if key == 'Gezicht' %}
+                        <div onclick='toggle("{{key}}")' class='category activeCategory' id='{{key}}Category'>{{ key }}</div>
+                    {% else %}
+                        <div onclick='toggle("{{key}}")' class='category' id='{{key}}Category'>{{ key }}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div id='treatments'>
+                {% for key, category in Behandelingen %}
+                    {% for key2, treatment in category %}
+                        <div class='treatment {{key}}'>
+                            <div class='treatmentImage' style='background-image: url({{asset(treatment.photo)}})' />
+                            </div>
+                            <div class='info'>
+                                <p id='length'> {{treatment.length}} </p>
+                                <p id='info'> {{treatment.info}} </p>
+                                <ul>
+                                {% for step in treatment.steps %}
+                                    <li id='step'> {{step}} </li>
+                                {% endfor %}
+                                </ul>
+                            </div>
+                            <div class='price'>
+                                {{treatment.price}}
+                            </div>
                         </div>
                     {% endfor %}
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>

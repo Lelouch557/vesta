@@ -1,0 +1,83 @@
+#Behandelingen{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#categories{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title{
+    font-size: x-large;
+    font-weight: 400;
+}
+
+.category{
+    width:90%;
+    border-top:1px solid black;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:10px;
+    padding-left:0px;
+    padding-right:0px;
+    transition: all 0.25s;
+    background-color: #cf94f1;
+    cursor:pointer;
+}
+
+.category:hover{
+    background-color: #e2afff;
+}
+
+.price{
+    height: fit-content;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 12px;
+    border-top-right-radius: 0px;
+    background-color: #70428a;
+    color: white;
+}
+
+#treatments{
+    margin-left:15%;
+    overflow: scroll;
+    height: 850px;
+    background-color: #f7eaff;
+    overflow-x: hidden;
+}
+.treatment{
+    display: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    padding: 10px;
+}
+.activeCategory{
+    background-color: purple;
+}
+.Gezicht{
+    display:flex;
+}
+#wrapper{
+    height: 100%;
+    width:75%;
+    margin-left:15%;
+}
+
+.treatmentImage{
+    align-self: center;
+    border-radius: 116px;
+    border: 2px solid black;
+    background-image: url(/Photos/gezicht-source.png);
+    width: 125px;
+    height: 125px;
+    background-position: center;
+    background-size: cover;
+}
