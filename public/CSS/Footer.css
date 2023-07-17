@@ -110,13 +110,75 @@ td {
     #footerWrapper{
         width:100%;
         margin-left: 0%;
+        margin-top:0px;
         font-size: x-large;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     #footer{
         bottom: 0px;
         top: 0px;
         left: 0px;
         right: 0px;
-        height:-px;
+        height: fit-content;
+    }
+    .material-symbols-outlined{
+        font-size: 50px;
+    }
+
+    #tijden {
+        margin-top:100px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 4px solid #737373;
+        font-size: xxx-large;
+    }
+
+    #ContactInformatie{
+        margin-top:100px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 4px solid #737373;
+        font-size: xxx-large;
+    }
+
+    #socials{
+        margin-top:100px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 4px solid #737373;
+        font-size: xxx-large;
+    }
+    #socials a{
+        height: 50px;
+        width: 50px;
+        font-size: xxx-large;
+    }
+
+    #times .t2 p{
+        height: 51px;
+        margin: 0;
+    }
+
+    #times{
+        margin-top: -20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    tr{
+        height: 65px;
+    }
+
+    #footerTitle{
+        font-size: 80px;
     }
 }

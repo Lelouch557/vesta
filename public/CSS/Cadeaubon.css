@@ -91,21 +91,57 @@
     display: flex;
     border: 2px solid black;
     background-image: url(/Photos/gezicht-source.png);
-    /* width: 300px; */
-    height: 459px;
+    width: 300px;
+    height: initial;
     flex-wrap: nowrap;
     background-position: center;
     background-size: cover;
     flex-direction: row;
 }
+
 #line {
     width:47%;
+}
+img{
+    width: -webkit-fill-available;
 }
 #break{
     display: flex;
     flex-direction: row;
     font-weight: 400;
-    font-size: xx-large;
+    font-size: 3vh;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    #spaIcon{
+        font-size: 59px;
+    }
+
+    img{
+        width: -webkit-fill-available;
+    }
+    
+    .treatmentImage{
+        width: 87%;
+        height: initial;
+    }
+    
+    #wrapper{
+        height: fit-content;
+    }
+
+    #footer{
+        position: initial;
+    }
+
+    #treatments{
+        width:85%;
+    }
+    
+    .info{
+        margin: 0px;
+        width:835px;
+    }
 }
