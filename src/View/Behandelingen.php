@@ -36,7 +36,7 @@ class Behandelingen extends AbstractController{
                         'length' => '45 minuten',
                         'price' => '59,50',
                         'info' => 'Een basis gezichtsbehandeling dat de gezicht renig en ',
-                        'photo' => 'Photos/spa2.jpg',
+                        'photo' => 'Photos/spa10.jpg',
                         'steps' => [
                             'Huidanalyse',
                             'Oppervlakte reiniging',
@@ -54,7 +54,7 @@ class Behandelingen extends AbstractController{
                         'length' => '45 minuten',
                         'price' => '55,50',
                         'info' => 'Een basis  dat de gezicht renig en ',
-                        'photo' => 'Photos/gezicht.png',
+                        'photo' => 'Photos/spa2.jpg',
                         'steps' => [
                             'Huidanalyse',
                             'Oppervlakte reiniging',
@@ -68,7 +68,7 @@ class Behandelingen extends AbstractController{
                         'length' => '45 minuten',
                         'price' => '99,50',
                         'info' => 'Een basidat de gezicht renig en ',
-                        'photo' => 'Photos/spa2.png',
+                        'photo' => 'Photos/spa7.jpg',
                         'steps' => [
                             'Huidanalyse',
                             'Oppervlakte reiniging',

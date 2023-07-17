@@ -14,9 +14,12 @@
 }}
 {% block stylesheets %}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link href="{{ asset('CSS/Behandelingen.css') }}" rel="stylesheet" />
+<link href="{{ asset('CSS/Cadeaubon.css') }}" rel="stylesheet" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,500,0,0" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+{% endblock %}
+
+{% block javascript %}
 {% endblock %}
 
 {% block body %}
@@ -24,15 +27,20 @@
 {% endblock %}
 <div id='wrapper'>
     <div id='content'>
-        <div id='Behandelingen'>
+        <div id='treatments'>
             <div class='treatment'>
-                <div class='treatmentImage' style='background-image: url({{asset(Cadeaubon.photo)}})' />
+                <div class='treatmentImage'/>
+                    <img src='{{asset(Cadeaubon.photo)}}'/>
                 </div>
                 <div class='info'>
-                    <p id='info'> {{Cadeaubon.info}} </p>
-                </div>
-                <div class='price'>
-                    {{Cadeaubon.price}}
+                    <div id='break'>
+                        <span id="spaIcon" class="material-symbols-rounded">spa</span>Cadeaubon<span id="spaIcon" class="material-symbols-rounded">spa</span>
+                    </div>
+                        {% for key, infoLine in Cadeaubon.info %}
+                    <p id='info'> 
+                            {{ infoLine}}
+                    </p>
+                        {% endfor %}
                 </div>
             </div>
         </div>
