@@ -12,11 +12,11 @@ OverOns:
     controller: App\View\About
 
 Behandelingen:
-    path: /behandelingen
+    path: /Behandelingen
     controller: App\View\Behandelingen
 
 Cadeaubon:
-    path: /cadeaubon
+    path: /Cadeaubon
     controller: App\View\Cadeaubon
 
 oauth2:
